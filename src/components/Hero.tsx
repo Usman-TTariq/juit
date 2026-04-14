@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+
+const HERO_IMAGE = "/Gemini_Generated_Image_cmyq4ncmyq4ncmyq.png";
 
 const accent = "#af101a";
 
@@ -45,11 +48,16 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Image area — add Next/Image or background when asset is ready */}
-        <div
-          className="min-h-[240px] bg-[#eeeeee] md:min-h-0 md:border-l md:border-[#e2e2e2]"
-          aria-hidden
-        />
+        <div className="relative min-h-[280px] w-full overflow-hidden bg-[#e8e8e8] md:min-h-[min(36rem,85vh)] md:border-l md:border-[#e2e2e2] lg:min-h-[min(40rem,90vh)]">
+          <Image
+            src={HERO_IMAGE}
+            alt="Two professionals collaborating at a laptop in a modern office."
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

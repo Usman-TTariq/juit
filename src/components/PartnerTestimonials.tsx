@@ -1,15 +1,19 @@
+import Image from "next/image";
+
 const testimonials = [
   {
     quote:
       "JUIT Technologies isn't just an outsourcing partner; they are a strategic asset. Their KPO team handles our most complex medical billing with zero errors.",
     name: "Sarah Chen",
     role: "CTO, HealthSphere US",
+    image: "/Gemini_Generated_Image_qdoqz2qdoqz2qdoq.png",
   },
   {
     quote:
       "The scale of their operations in Karachi is impressive. They managed to ramp up our CX team from 10 to 150 agents in less than 45 days.",
     name: "Marcus Thorne",
     role: "VP Operations, Global Logistics",
+    image: "/Gemini_Generated_Image_fqaqlkfqaqlkfqaq.png",
   },
 ] as const;
 
@@ -36,10 +40,15 @@ export function PartnerTestimonials() {
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
-                <span
-                  className="h-12 w-12 shrink-0 rounded-full bg-[#e2e2e2]"
-                  aria-hidden
-                />
+                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-[#e2e2e2] md:h-16 md:w-16">
+                  <Image
+                    src={t.image}
+                    alt=""
+                    width={64}
+                    height={64}
+                    className="h-full w-full object-cover"
+                  />
+                </span>
                 <div>
                   <p className="font-bold text-[#1b1b1b]">{t.name}</p>
                   <p className="text-xs font-bold uppercase tracking-widest text-[#af101a]">

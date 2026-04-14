@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const LOGO_SRC = "/jui%20logo%20vert.png";
+const LOGO_SRC = "/Black%20favicon.png";
 
 const LINKEDIN_COMPANY_URL =
   "https://pk.linkedin.com/company/juit-technologies-private-limited";
@@ -41,14 +41,13 @@ export function SiteFooter() {
             className="mb-6 inline-flex max-w-[min(100%,19rem)] items-center gap-2.5 py-1"
             aria-label="Juit Technologies Private Limited — Home"
           >
-            <span className="relative isolate block h-10 w-[3.25rem] shrink-0 overflow-hidden sm:h-11 sm:w-14">
+            <span className="relative isolate block h-10 w-10 shrink-0 overflow-hidden sm:h-11 sm:w-11">
               <Image
                 src={LOGO_SRC}
                 alt=""
                 fill
-                className="object-cover object-left"
-                sizes="256px"
-                unoptimized
+                className="object-contain object-center"
+                sizes="44px"
               />
             </span>
             <span className="flex min-w-0 flex-col leading-tight">

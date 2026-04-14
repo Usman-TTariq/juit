@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BRAND_RED = "#af101a";
 
-const LOGO_SRC = "/jui%20logo%20vert.png";
+const LOGO_SRC = "/white%20favicon.png";
 
 export function Navbar() {
   return (
@@ -18,16 +18,14 @@ export function Navbar() {
             className="flex h-full min-w-0 max-w-[min(100%,19rem)] shrink-0 items-center gap-2.5 py-2 sm:gap-3"
             aria-label="Juit Technologies Private Limited — Home"
           >
-            {/* Full-res PNG: tiny optimized src + object-cover crop was upscaling → blur */}
-            <span className="relative isolate block h-9 w-[3.25rem] shrink-0 overflow-hidden sm:h-10 sm:w-14">
+            <span className="relative isolate block h-9 w-9 shrink-0 overflow-hidden sm:h-10 sm:w-10">
               <Image
                 src={LOGO_SRC}
                 alt=""
                 fill
-                className="object-cover object-left"
-                sizes="256px"
+                className="object-contain object-center"
+                sizes="40px"
                 priority
-                unoptimized
               />
             </span>
             <span className="flex min-w-0 flex-col leading-tight">
