@@ -37,6 +37,25 @@ function smtpFailureSummary(err: unknown): string {
   return String(err);
 }
 
+/** Safe, non-technical message for the client (no IPs / stack). */
+function publicSmtpError(err: unknown): string {
+  const any = err as { code?: string; message?: string };
+  const msg = String(any.message ?? "");
+  if (any.code === "EAUTH" || /535|Invalid login|authentication failed/i.test(msg)) {
+    return "Mail login failed. Check SMTP_USER and SMTP_PASS (e.g. Gmail app password).";
+  }
+  if (any.code === "ETIMEDOUT" || /ETIMEDOUT/i.test(msg)) {
+    return "Could not reach the mail server in time. Your network may block SMTP — try another Wi‑Fi, turn VPN off, or use port 465 with SMTP_SECURE=true.";
+  }
+  if (any.code === "ECONNECTION" || /ECONNREFUSED|ENOTFOUND/i.test(msg)) {
+    return "Could not open a connection to the mail server. Check SMTP_HOST and SMTP_PORT.";
+  }
+  if (/ENETUNREACH/i.test(msg)) {
+    return "Could not reach the mail server on the current network path.";
+  }
+  return "Could not send your message. Please try again later.";
+}
+
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -119,7 +138,28 @@ export async function POST(request: Request) {
     ...(servername ? { servername } : {}),
     connectionTimeout,
     ...(port === 587 && !secure ? { requireTLS: true } : {}),
+    // Old projects often set rejectUnauthorized: false for dev/self-signed certs only.
+    // Does NOT fix ETIMEDOUT (firewall). Use only when you trust the network + server.
+    ...(process.env.SMTP_TLS_INSECURE === "true"
+      ? { tls: { rejectUnauthorized: false } }
+      : {}),
   });
+
+  if (process.env.SMTP_VERIFY === "true") {
+    try {
+      await transporter.verify();
+    } catch (verifyErr) {
+      const details = smtpFailureSummary(verifyErr);
+      console.error("[contact] transporter.verify failed:", details);
+      return NextResponse.json(
+        {
+          error: publicSmtpError(verifyErr),
+          ...(process.env.NODE_ENV === "development" ? { details } : {}),
+        },
+        { status: 502 },
+      );
+    }
+  }
 
   const safeName = name.trim().replace(/[\r\n]/g, " ").slice(0, 120);
   const text = [
@@ -150,7 +190,7 @@ export async function POST(request: Request) {
     }
     console.error("[contact] sendMail failed:", details);
     const payload: { error: string; details?: string } = {
-      error: "Could not send your message. Please try again later.",
+      error: publicSmtpError(err),
     };
     if (process.env.NODE_ENV === "development") {
       payload.details = details;
