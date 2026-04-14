@@ -120,14 +120,8 @@ export function SiteFooter() {
           </p>
         </div>
       </div>
-      <div className="mx-auto mt-16 flex max-w-[1920px] flex-col items-center justify-between gap-6 border-t border-white/5 px-6 pt-10 md:mt-24 md:flex-row md:px-10">
-        <p>
-          © {year} JUIT Technologies. All Rights Reserved. Precision in Pakistan.
-        </p>
-        <div className="flex gap-8">
-          <span className="cursor-pointer transition-colors hover:text-white">Security</span>
-          <span className="cursor-pointer transition-colors hover:text-white">Compliance</span>
-        </div>
+      <div className="mx-auto mt-16 max-w-[1920px] border-t border-white/5 px-6 pt-10 md:mt-24 md:px-10">
+        <p>© {year} JUIT Technologies. All Rights Reserved. Precision in Pakistan.</p>
       </div>
     </footer>
   );

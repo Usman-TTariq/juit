@@ -1,4 +1,3 @@
-import { Certifications } from "@/components/Certifications";
 import { CommonInquiries } from "@/components/CommonInquiries";
 import { GlobalPartners } from "@/components/GlobalPartners";
 import { Hero } from "@/components/Hero";
@@ -17,7 +16,6 @@ export default function Home() {
       <ImpactAtScale />
       <PakistanAdvantage />
       <PartnerTestimonials />
-      <Certifications />
       <CommonInquiries />
       <ScaleCta />
     </>

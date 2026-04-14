@@ -41,7 +41,7 @@ export function PakistanAdvantage() {
               {advantages.map((item) => (
                 <li key={item.num} className="flex gap-5 sm:gap-6">
                   <span
-                    className="shrink-0 text-4xl font-black tabular-nums leading-none text-[#d4d4d4] sm:text-5xl"
+                    className="shrink-0 text-4xl font-black tabular-nums leading-none text-[#af101a] sm:text-5xl"
                     aria-hidden
                   >
                     {item.num}
