@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TalkToUsModal } from "./TalkToUsModal";
 
-const BRAND_RED = "#af101a";
-
-const LOGO_SRC = "/white%20favicon.png";
+const LOGO_SRC = "/Black%20favicon.png";
 
 export function Navbar() {
   return (
@@ -46,13 +45,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          <Link
-            href="/talk-to-us"
-            className="inline-flex shrink-0 rounded-none px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-opacity hover:opacity-90 lg:px-6 lg:text-sm"
-            style={{ backgroundColor: BRAND_RED }}
-          >
-            Talk to us
-          </Link>
+          <TalkToUsModal />
         </nav>
       </div>
     </header>
