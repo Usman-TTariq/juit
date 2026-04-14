@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#ffdad6",
+                    "on-surface": "#1b1b1b",
+                    "on-secondary-container": "#646464",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e2e2e2",
+                    "primary-container": "#d32f2f",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "inverse-primary": "#ffb3ac",
+                    "on-secondary-fixed-variant": "#474747",
+                    "surface-container-high": "#e8e8e8",
+                    "inverse-on-surface": "#f1f1f1",
+                    "tertiary-fixed": "#e5e2e1",
+                    "tertiary-container": "#706f6f",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#303030",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "outline": "#8f6f6c",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-primary-fixed": "#410003",
+                    "surface-dim": "#dadada",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-tertiary-container": "#f7f4f3",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#585757",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#e2e2e2",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-tint": "#ba1a20",
+                    "on-primary-container": "#fff2f0",
+                    "surface-variant": "#e2e2e2",
+                    "surface-container-low": "#f3f3f3",
+                    "primary-fixed-dim": "#ffb3ac",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f9f9f9",
+                    "outline-variant": "#e4beba",
+                    "on-primary": "#ffffff",
+                    "surface": "#f9f9f9",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#930010",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "secondary": "#5e5e5e",
+                    "primary": "#af101a",
+                    "on-background": "#1b1b1b",
+                    "on-surface-variant": "#5b403d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #f9f9f9; font-family: 'Inter', sans-serif; }
+        .no-line { border: none !important; }
+        .tonal-stacking { position: relative; }
+        .text-obsidian { color: #1b1b1b; }
+        .bg-obsidian { background-color: #1b1b1b; }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-xl no-line tonal-stacking">
+<div class="flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-neutral-900 dark:text-neutral-50 font-inter tracking-tight uppercase">
+                JUIT Technologies
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#af101a] border-b-2 border-[#af101a] pb-1 font-inter tracking-tight font-extrabold uppercase text-sm" href="#">CX</a>
+<a class="text-neutral-900 dark:text-neutral-50 hover:text-[#af101a] transition-colors font-inter tracking-tight font-extrabold uppercase text-sm" href="#">FAO</a>
+<a class="text-neutral-900 dark:text-neutral-50 hover:text-[#af101a] transition-colors font-inter tracking-tight font-extrabold uppercase text-sm" href="#">ITES</a>
+<a class="text-neutral-900 dark:text-neutral-50 hover:text-[#af101a] transition-colors font-inter tracking-tight font-extrabold uppercase text-sm" href="#">Back-Office</a>
+<a class="text-neutral-900 dark:text-neutral-50 hover:text-[#af101a] transition-colors font-inter tracking-tight font-extrabold uppercase text-sm" href="#">KPO</a>
+<a class="text-neutral-900 dark:text-neutral-50 hover:text-[#af101a] transition-colors font-inter tracking-tight font-extrabold uppercase text-sm" href="#">HRO</a>
+</div>
+<button class="bg-[#af101a] text-white px-8 py-3 font-bold uppercase tracking-wider text-xs scale-95 hover:scale-100 transition-all duration-300">
+                Talk to Us
+            </button>
+</div>
+</nav>
+<main class="mt-24">
+<!-- Hero Section -->
+<section class="px-12 py-24 md:py-48 flex flex-col items-start max-w-[1920px] mx-auto relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none">
+<img class="w-full h-full object-cover grayscale" data-alt="monolithic architectural building with sharp lines in black and white high contrast photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL0DkeVTAhAU4oaejRQdiQQUHX77NSAZZ0KCTkYH3lCHF46n4iinH7IIpOnGSpiXCULMcvhvoMxN83kCl-VHmBXviSX6hjL6AlD1Kppb1GAj77xFvS62a6Ua-w7F9Ee5YpP8ZEYb2ktKyF5XGNRwSiwXHVgDHg3JbYQJLbHExxNiXlAU4J_ngDMGAoPAVmsJPiSS_YvG7icCSNgczzh-RJayFtDP697hcp9XlQwshzv4fpupx1rdaGcQHWq9tFEtnfj5pzM-mIXkM"/>
+</div>
+<div class="z-10 max-w-5xl">
+<span class="text-[#af101a] font-bold tracking-[0.2em] uppercase text-sm mb-6 block">Precision BPO &amp; Tech</span>
+<h1 class="text-7xl md:text-9xl font-black text-on-surface leading-[0.9] tracking-tighter mb-12">
+                    Transforming Ideas <br/>into <span class="text-[#af101a]">High-Impact</span> <br/>Digital Solutions
+                </h1>
+<p class="text-xl md:text-2xl max-w-2xl text-on-surface-variant leading-relaxed mb-12">
+                    Operating from the heart of Karachi, Pakistan, we deliver surgical-precision outsourcing and engineering for global enterprises.
+                </p>
+<div class="flex gap-4">
+<button class="bg-obsidian text-white px-10 py-5 font-bold uppercase tracking-widest text-sm hover:bg-[#af101a] transition-colors duration-500">
+                        Explore Our Pillars
+                    </button>
+<button class="border-2 border-obsidian text-obsidian px-10 py-5 font-bold uppercase tracking-widest text-sm hover:bg-obsidian hover:text-white transition-all">
+                        Talk to Us
+                    </button>
+</div>
+</div>
+</section>
+<!-- Trusted By (Logo Cloud) -->
+<section class="bg-surface-container-low py-16 px-12 no-line">
+<div class="max-w-[1920px] mx-auto flex flex-wrap justify-between items-center gap-12 opacity-50 grayscale">
+<span class="font-black text-2xl">GLOBAL PARTNERS</span>
+<div class="flex flex-wrap gap-16 items-center">
+<span class="text-2xl font-bold tracking-tighter">FINTECH.CO</span>
+<span class="text-2xl font-bold tracking-tighter">NEXUS GLOBAL</span>
+<span class="text-2xl font-bold tracking-tighter">QUANTUM SYSTEMS</span>
+<span class="text-2xl font-bold tracking-tighter">VELOCITY AI</span>
+</div>
+</div>
+</section>
+<!-- Services Breakdown (Bento Grid Style) -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<h2 class="text-5xl md:text-7xl font-black tracking-tighter leading-none">THE SIX <br/>PILLARS</h2>
+<div class="h-1 w-32 bg-[#af101a] mb-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0">
+<!-- CX & Support -->
+<div class="bg-surface-container-lowest p-12 border-b border-r border-surface-container hover:bg-neutral-50 transition-colors group">
+<span class="text-[#af101a] font-bold text-4xl mb-8 block">01</span>
+<h3 class="text-3xl font-black mb-6 uppercase tracking-tight">CX &amp; Support</h3>
+<ul class="space-y-4 text-on-surface-variant mb-12">
+<li>Omnichannel Support</li>
+<li>Technical Helpdesk</li>
+<li>Multilingual Call Center</li>
+</ul>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform duration-300">arrow_right_alt</span>
+</div>
+<!-- FAO -->
+<div class="bg-surface-container-lowest p-12 border-b border-r border-surface-container hover:bg-neutral-50 transition-colors group">
+<span class="text-[#af101a] font-bold text-4xl mb-8 block">02</span>
+<h3 class="text-3xl font-black mb-6 uppercase tracking-tight">Finance &amp; Accounting</h3>
+<ul class="space-y-4 text-on-surface-variant mb-12">
+<li>Bookkeeping &amp; Audits</li>
+<li>Strategic Tax Filing</li>
+<li>Global Payroll Management</li>
+</ul>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform duration-300">account_balance_wallet</span>
+</div>
+<!-- ITES -->
+<div class="bg-surface-container-lowest p-12 border-b border-surface-container hover:bg-neutral-50 transition-colors group">
+<span class="text-[#af101a] font-bold text-4xl mb-8 block">03</span>
+<h3 class="text-3xl font-black mb-6 uppercase tracking-tight">IT &amp; Technical</h3>
+<ul class="space-y-4 text-on-surface-variant mb-12">
+<li>Staff Augmentation</li>
+<li>Managed IT Infrastructure</li>
+<li>Custom Software Dev</li>
+</ul>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform duration-300">terminal</span>
+</div>
+<!-- Back-Office -->
+<div class="bg-surface-container-lowest p-12 border-r border-surface-container hover:bg-neutral-50 transition-colors group">
+<span class="text-[#af101a] font-bold text-4xl mb-8 block">04</span>
+<h3 class="text-3xl font-black mb-6 uppercase tracking-tight">Back-Office</h3>
+<ul class="space-y-4 text-on-surface-variant mb-12">
+<li>High-Scale Data Entry</li>
+<li>E-commerce Operations</li>
+<li>Supply Chain Management</li>
+</ul>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform duration-300">inventory</span>
+</div>
+<!-- KPO -->
+<div class="bg-surface-container-lowest p-12 border-r border-surface-container hover:bg-neutral-50 transition-colors group">
+<span class="text-[#af101a] font-bold text-4xl mb-8 block">05</span>
+<h3 class="text-3xl font-black mb-6 uppercase tracking-tight">KPO Services</h3>
+<ul class="space-y-4 text-on-surface-variant mb-12">
+<li>Medical Billing &amp; Coding</li>
+<li>AI Data Annotation</li>
+<li>Legal Process Outsourcing</li>
+</ul>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform duration-300">psychology</span>
+</div>
+<!-- HRO -->
+<div class="bg-surface-container-lowest p-12 hover:bg-neutral-50 transition-colors group">
+<span class="text-[#af101a] font-bold text-4xl mb-8 block">06</span>
+<h3 class="text-3xl font-black mb-6 uppercase tracking-tight">HR Outsourcing</h3>
+<ul class="space-y-4 text-on-surface-variant mb-12">
+<li>Global Talent Sourcing</li>
+<li>Performance Management</li>
+<li>Benefits Administration</li>
+</ul>
+<span class="material-symbols-outlined text-4xl group-hover:translate-x-4 transition-transform duration-300">groups</span>
+</div>
+</div>
+</section>
+<!-- Case Studies (High Impact) -->
+<section class="bg-obsidian text-white py-32 px-12">
+<div class="max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8 mb-24">
+<h2 class="text-6xl font-black tracking-tighter uppercase">IMPACT AT SCALE</h2>
+<div class="flex-grow h-[1px] bg-white/20"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24">
+<div class="space-y-8">
+<img class="w-full aspect-video object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="high-tech control room with large screens and engineers in a dark environment with red lighting accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjtInGi-2SHBdY7nIGJ-0C9r1NVJxuZZFf_wiKFR-Ff8h4Ppor-ESJd19jxzkEZnzd83iibY3RS1kJsFC_RvXRSd7rh1xNrMEeFQpdSNoAWiGHhd9za0zs0TffE-R0iohYB6LxlQ3eaAGx1jRyi_hCes7MfrjRS3r2iRi8wk7XfcyZFDxHojCOQkdAVULePRVWF3CT7QXLUPucwB7idePvvK0dYujDlWi19J1YSH4r3krxhyi-8nr7MKPfm5O1WhidObdhP-S-Heg"/>
+<div>
+<span class="text-[#af101a] font-bold uppercase tracking-widest text-sm">KPO / DATA ANNOTATION</span>
+<h4 class="text-4xl font-black mt-4 mb-6">Autonomous Vehicle Training for EU Tech Leader</h4>
+<p class="text-neutral-400 text-lg">Processing 4 million frames monthly with 99.8% precision, accelerating our client's AI roadmap by 14 months.</p>
+</div>
+</div>
+<div class="space-y-8">
+<img class="w-full aspect-video object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" data-alt="collaborative workspace in a modern office with sleek tech furniture and moody lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5txDh3tyajkbIykvRdGJhjjxDEDgFqwSYOiImGd4S4CnLlzaIYhy7R5rp_iZuEm9I5hwxi2CRtLGndJB6kId9vGH39CL7PdtIaNadp1q6nU0wVHNsZfPsvWTIGlB4avaZhuK7vl0_z328TXDNBCHA6rnLwBaMttDIM9g-f4Kkoz3YW3vKWMufHZK2R7cMUXjDWBdiL18u0kA15TkdJU7UglIUlCSk2R44gnG8C94H48Sy27APJlqoxMGm6OdpgZPYRI5-dZypu0Y"/>
+<div>
+<span class="text-[#af101a] font-bold uppercase tracking-widest text-sm">CX / OMNICHANNEL</span>
+<h4 class="text-4xl font-black mt-4 mb-6">Global Scale-up for US E-commerce Giant</h4>
+<p class="text-neutral-400 text-lg">Transitioned 24/7 support across 14 languages, reducing overhead costs by 45% while increasing CSAT scores.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Pakistan Talent -->
+<section class="py-32 px-12 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="text-6xl font-black tracking-tighter mb-12">THE PAKISTAN <br/>ADVANTAGE</h2>
+<div class="space-y-12">
+<div class="flex gap-8">
+<span class="text-4xl font-black text-surface-container-highest">01</span>
+<div>
+<h4 class="text-2xl font-bold mb-2">Elite Talent Pipeline</h4>
+<p class="text-on-surface-variant">Drawing from Pakistan's top engineering universities, our teams combine deep technical fluency with global cultural alignment.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<span class="text-4xl font-black text-surface-container-highest">02</span>
+<div>
+<h4 class="text-2xl font-bold mb-2">Architectural Precision</h4>
+<p class="text-on-surface-variant">We don't just fill seats. We engineer processes. Our management team applies rigorous systems thinking to every workflow.</p>
+</div>
+</div>
+<div class="flex gap-8">
+<span class="text-4xl font-black text-surface-container-highest">03</span>
+<div>
+<h4 class="text-2xl font-bold mb-2">Economic Optimization</h4>
+<p class="text-on-surface-variant">Maximize your EBITDA without compromising quality. Our Karachi hub offers the world's best value-to-precision ratio.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img class="w-full grayscale brightness-90" data-alt="close-up of professional team members collaborating in a focused environment, grayscale with subtle crimson lighting highlights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2pN5m3TPb5BPGpZO4zIo7cqynX75JetCTskKmxiF9WrZkj8SxLgxxBNr4VEFMtKo2syKLJDU2A6yTdm94C75X_B0HPe9bowQGZEOreZL-sfi_6gnMxdeL4u1tEQBzbHotfzNVOZ-G7b6yE2f2P8Eu6vPjjcZ3820r5GahwTEQsSUab4vQZ3FOo90U_ZRa4l7_DnsGEboqieSoYXZE9V4elYB97gTLdJYu-EjDl1pBTesGunlrRGHNaWzJGUx52C9JBXGKJTHYGPo"/>
+<div class="absolute -bottom-12 -left-12 bg-[#af101a] p-12 text-white">
+<span class="text-8xl font-black block leading-none">98%</span>
+<span class="text-xl font-bold uppercase tracking-widest">Client Retention Rate</span>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="bg-surface-container-low py-32 px-12">
+<div class="max-w-[1920px] mx-auto">
+<h2 class="text-center text-4xl font-black mb-24 uppercase tracking-[0.2em]">Partner Testimonials</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-white p-16 shadow-sm border-l-8 border-[#af101a]">
+<p class="text-2xl italic leading-relaxed mb-8">"JUIT Technologies isn't just an outsourcing partner; they are a strategic asset. Their KPO team handles our most complex medical billing with zero errors."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-neutral-200 rounded-full"></div>
+<div>
+<h5 class="font-bold">Sarah Chen</h5>
+<span class="text-xs uppercase tracking-widest text-[#af101a]">CTO, HealthSphere US</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-16 shadow-sm border-l-8 border-[#af101a]">
+<p class="text-2xl italic leading-relaxed mb-8">"The scale of their operations in Karachi is impressive. They managed to ramp up our CX team from 10 to 150 agents in less than 45 days."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-neutral-200 rounded-full"></div>
+<div>
+<h5 class="font-bold">Marcus Thorne</h5>
+<span class="text-xs uppercase tracking-widest text-[#af101a]">VP Operations, Global Logistics</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications -->
+<section class="py-16 px-12 flex flex-wrap justify-center items-center gap-24 opacity-30 grayscale max-w-[1920px] mx-auto">
+<div class="text-xl font-black border-2 border-black px-6 py-2 tracking-tighter">ISO 27001</div>
+<div class="text-xl font-black border-2 border-black px-6 py-2 tracking-tighter">GDPR COMPLIANT</div>
+<div class="text-xl font-black border-2 border-black px-6 py-2 tracking-tighter">SOC 2 TYPE II</div>
+<div class="text-xl font-black border-2 border-black px-6 py-2 tracking-tighter">HIPAA CERTIFIED</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-32 px-12 max-w-4xl mx-auto">
+<h2 class="text-5xl font-black text-center mb-16 uppercase tracking-tighter">Common Inquiries</h2>
+<div class="space-y-0">
+<div class="group border-b border-surface-container py-8 cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-xl font-bold uppercase">What is the onboarding timeline?</h4>
+<span class="material-symbols-outlined text-[#af101a]">add</span>
+</div>
+</div>
+<div class="group border-b border-surface-container py-8 cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-xl font-bold uppercase">How do you handle data security?</h4>
+<span class="material-symbols-outlined text-[#af101a]">add</span>
+</div>
+</div>
+<div class="group border-b border-surface-container py-8 cursor-pointer">
+<div class="flex justify-between items-center">
+<h4 class="text-xl font-bold uppercase">Can we scale teams up/down seasonally?</h4>
+<span class="material-symbols-outlined text-[#af101a]">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-[#af101a] py-32 px-12 text-center text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="dynamic abstract light patterns and tech network lines against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNDT2-cG-JLNKrQSQXfvwz5XbVdoDC4uY32DkhsqkHtRoY8NAVHITNcbuXRXkwTJRlP09z6C2ZECMdIXs_t1HjU2LrpHx5c9oXnnAG7zeqTvJfTyK6PNBh7nUkL2cEmGAU3ZsyJsNNJtNrs-DGAMHxu6DdyCbA0SYuS8_p0c0Dd6RBzfAMsuwesniDS4M_66bg9Wmlul6DsDMpWlAIK8Hqp52hO16mmxkvW44sCcIA34ow0NZZMjwU1rQQvz7pN94Mk2Ur1mIHuh4"/>
+</div>
+<div class="relative z-10">
+<h2 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-none">READY TO SCALE <br/>YOUR BUSINESS?</h2>
+<p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto opacity-80">Join the world's fastest-growing companies leveraging Pakistan's premier tech and talent ecosystem.</p>
+<button class="bg-white text-[#af101a] px-16 py-6 font-black uppercase tracking-widest text-lg hover:bg-obsidian hover:text-white transition-all duration-500">
+                    Get a Custom Proposal
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-neutral-950 text-neutral-400 font-inter text-sm tracking-wide w-full pt-24 pb-12 no-line tonal-stacking border-t border-white/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-[1920px] mx-auto">
+<div class="col-span-1">
+<div class="text-xl font-black text-white mb-8">JUIT Technologies</div>
+<p class="mb-8">Precision-engineered BPO and technical outsourcing from Pakistan’s leading tech hub.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white hover:text-[#af101a] cursor-pointer">public</span>
+<span class="material-symbols-outlined text-white hover:text-[#af101a] cursor-pointer">work</span>
+<span class="material-symbols-outlined text-white hover:text-[#af101a] cursor-pointer">shield</span>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Solutions</h5>
+<ul class="space-y-4">
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Customer Experience</a></li>
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Managed IT Services</a></li>
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Financial Outsourcing</a></li>
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Knowledge Process</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Company</h5>
+<ul class="space-y-4">
+<li><a class="hover:text-[#af101a] transition-colors" href="#">About JUIT</a></li>
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Careers in Karachi</a></li>
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#af101a] transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Global HQ</h5>
+<p class="mb-4">Pakistan HQ: Floor 5, Tech Tower, Karachi</p>
+<p class="mb-4">Email: info@juit.tech</p>
+<p>Phone: +92 (51) 555-0123</p>
+</div>
+</div>
+<div class="mt-24 px-12 max-w-[1920px] mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+<p>© 2024 JUIT Technologies. All Rights Reserved. Precision in Pakistan.</p>
+<div class="flex gap-8">
+<span class="hover:text-white cursor-pointer transition-colors">Security</span>
+<span class="hover:text-white cursor-pointer transition-colors">Compliance</span>
+</div>
+</div>
+</footer>
+</body></html>
